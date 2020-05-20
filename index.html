@@ -56,6 +56,61 @@
             </ul>
         </li>
     </ol>
+
+    <h2 class="h3">Gérer ses sources dans l'historique</h2>
+    <ol>
+        <li><h3 class="h4">Consulter l'historique</h3>
+            <ul>
+                <li><strong>git log</strong> pour voir tous les commits</li>
+                <li><strong>git log -1</strong> pour voir le dernier commit ou -2 -3 ...</li>
+                <li><strong>git log --oneline</strong> pour voir tous les commits mais sur une ligne</li>
+                <li><strong>git log --oneline -2</strong> pour voir les 2 derniers commits sur une ligne</li>
+                <li><strong>git log --author "Prénom Nom"</strong> filtrer par auteur</li>
+                <li><strong>git log --before="2020-03-10"</strong> avant une date</li>
+                <li><strong>git log --after="2020-03-10"</strong> après une date</li>
+                <li><strong>git log --since=1.day</strong> depuis un jour (week month...)</li>
+                <li><strong>git log fichier</strong> filtrer par fichier</li>
+            </ul>
+        </li>
+        <li><h3 class="h4">Parcourir les différences dans l'historique</h3>
+            <ul>
+                <li><strong>git diff</strong> affiche les différences entre le répertoire et l'index</li>
+                <li><strong>git diff --cached</strong> voir les diff. entre l'index et le dépot</li>
+                <li><strong>git diff Head</strong> voir les diff. entre le répertoire et le dépot</li>
+                <li><strong>git diff Head^1</strong> voir les diff. entre le rép. et le dépot sur le dernier commit</li>
+                <li><strong>git diff ASH1 ASH2</strong> voir les diff. entre deux commits (ASH=>code commit)</li>
+            </ul>
+        </li>
+        <li><h3 class="h4">Rechercher un commit</h3>
+            <ul>
+                <li><strong>git log -S "terme"</strong> permet de faire une recherche sur un terme</li>
+                <li><strong>git log -G "terme1|terme2"</strong> une recherche avec des expressions régulières</li>
+                <li><strong>git blame fichier</strong> renvoie un fichier avec l'auteur de chaque ligne</li>
+            </ul>
+        </li>
+        <li><h3 class="h4">Annuler des modifications du répertoire</h3>
+            <ul>
+                <li><strong>git reset --hard</strong> remet le répertoire de travail au même état que le dépot Git</li>
+                <li><strong>git reset</strong> supprime les modifs uniquement dans l'index</li>
+                <li><strong>git reset --hard ASH</strong> remet le répertoire à un commit précis (ASH=>code commit)</li>
+                <li><strong>git reset --soft</strong> supprime les modifs au niveau du dépot</li>
+            </ul>
+        </li>
+        <li><h3 class="h4">Modifier un commit</h3>
+            <ul>
+                <li><strong>On ne peut modifier que le dernier commit si on a pas "poussé" ses modifs sur un serveur</strong></li>
+                <li><strong>git commit -m "Message" --amend</strong> redéfinit le message du dernier commit</li>
+            </ul>
+        </li>
+        <li><h3 class="h4">Supprimer les fichiers non suivis</h3>
+            <ul>
+                <li><strong>git clean -n</strong> pour voir seulement avant de supprimer</li>
+                <li><strong>git clean -dn</strong> pour voir seulement avec la suppression de sous-dossiers aussi</li>
+                <li><strong>git clean -df</strong> supprime vraiment les fichiers et dossiers non suivis</li>
+                <li><strong>git clean -xf</strong> supprime les fichiers listés dans .gitignore</li>
+            </ul>
+        </li>
+    </ol>
    
 </body>
 </html>
