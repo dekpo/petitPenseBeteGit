@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Découvrir Git</title>
     <link rel="stylesheet" href="css/bootstrap.css" />
+    <style>
+        h2{
+            margin: 20px;
+            color: grey;
+        }
+    </style>
 </head>
 <body>
 <div class="jumbotron text-center">
@@ -160,6 +166,25 @@
                 <li><strong>On peut supprimer une branche qui a été fusionnée</strong> car elle existe toujours</li>
                 <li><strong>On ne peut pas supprimer la branche sur laquelle on est placé</strong></li>
                 <li><strong>git branch -d nom-branche</strong> pour supprimer la branche</li>
+            </ul>
+        </li>
+        <li class="list-group-item"><h3 class="h4">Faire un rebasage d'une branche</h3>
+            <ul>
+                <li>Pour remplacer la fusion <strong>un rebasage intègre toutes les modifs d'une branche dans la principale</strong></li>
+                <li>Il ne faut pas avoir fait de "push" (à voir plus loin)</li>
+                <li><strong>Revenir donc d'abord sur la branche principale</strong></li>
+                <li><strong>git rebase nom-branche-secondaire</strong> pour appliquer toutes les modifs de cette branche dans la courante</li>
+            </ul>
+        </li>
+        <li class="list-group-item"><h3 class="h4">Gérer les tags</h3>
+            <ul>
+                <li>Les tags sont les numéros de versions d'un logiciel</li>
+                <li>Un tag correspond à une version stable du logiciel</li>
+                <li><strong>git log --oneline</strong> d'abord pour lister les commits</li>
+                <li><strong>git tag v1.0.0 ASH</strong> pour créer le tag en ref au commit ASH=>code court</li>
+                <li><strong>git show v1.0.0</strong> affiche le détail d'un tag</li>
+                <li><strong>git tag v1.0.1</strong> sans ASH utilisera le dernier commti</li>
+                <li><strong>git tag -a v1.1.1 ASH -m "Message"</strong> permet de préciser un message de tag</li>
             </ul>
         </li>
     </ul>
