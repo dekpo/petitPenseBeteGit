@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="css/bootstrap.css" />
 </head>
 <body>
+<div class="jumbotron text-center">
     <h1>Découvrir Git</h1>
+    <p>Le plus célèbre système de contrôle de version décentralisé gratuit et open source</p>
+</div>
+<div class="container p-3 my-3">
     <h2 class="h3">Manipuler les fichiers</h2>
-    <ol>
-        <li><h3 class="h4">Créer un dépot local</h3>
+    <ul class="list-group">
+        <li class="list-group-item"><h3 class="h4">Créer un dépot local</h3>
             <ul>
                 <li><strong>git init</strong> dans le répertoire pour initialiser</li>
                 <li><strong>git add fichier</strong> pour ajouter à l'index à chaque modif</li>
@@ -30,36 +34,36 @@
                 <strong>NB: Prendre le temps de rédiger de bons messages de commits</strong>
             </ul>
         </li>
-        <li><h3 class="h4">Intégrer des sources existantes</h3>
+        <li class="list-group-item"><h3 class="h4">Intégrer des sources existantes</h3>
             <ul>
                 <li><strong>git add -A</strong> ou <strong>git add .</strong> pour ajouter tous les fichiers du répertoire</li>
                 <li><strong>git add sous-dossier</strong> permet d'ajouter un sous-dossier complet</li>
             </ul>
         </li>
-        <li><h3 class="h4">Déplacer ou renommer un fichier</h3>
+        <li class="list-group-item"><h3 class="h4">Déplacer ou renommer un fichier</h3>
             <ul>
                 <li><strong>Ne pas renommer directement mais le faire avec Git</strong></li>
                 <li><strong>git mv ancien-nom nouveau-nom</strong> permet d'effectuer la modif dans l'index ET le répertoire de travail</li>
             </ul>
         </li>
-        <li><h3 class="h4">Supprimer un fichier</h3>
+        <li class="list-group-item"><h3 class="h4">Supprimer un fichier</h3>
             <ul>
                 <li><strong>Ne pas supprimer directement mais le faire avec Git</strong></li>
                 <li><strong>git rm fichier</strong> permet d'effectuer la suppression dans l'index ET le répertoire de travail</li>
                 <li><strong>git rm -rf dossier</strong> permet d'effectuer la suppression dans l'index ET le répertoire de travail</li>
             </ul>
         </li>
-        <li><h3 class="h4">Arrêter de suivre un fichier</h3>
+        <li class="list-group-item"><h3 class="h4">Arrêter de suivre un fichier</h3>
             <ul>
                 <li><strong>git rm --cached fichier</strong> retire le fichier de l'index mais pas du répertoire</li>
                 <li><strong>Utiliser un fichier .gitignore</strong> à la racine du dépot et ajouter le parcours des fichiers à ne pas suivre</li>
             </ul>
         </li>
-    </ol>
+    </ul>
 
     <h2 class="h3">Gérer ses sources dans l'historique</h2>
-    <ol>
-        <li><h3 class="h4">Consulter l'historique</h3>
+    <ul class="list-group">
+        <li class="list-group-item"><h3 class="h4">Consulter l'historique</h3>
             <ul>
                 <li><strong>git log</strong> pour voir tous les commits</li>
                 <li><strong>git log -1</strong> pour voir le dernier commit ou -2 -3 ...</li>
@@ -72,7 +76,7 @@
                 <li><strong>git log fichier</strong> filtrer par fichier</li>
             </ul>
         </li>
-        <li><h3 class="h4">Parcourir les différences dans l'historique</h3>
+        <li class="list-group-item"><h3 class="h4">Parcourir les différences dans l'historique</h3>
             <ul>
                 <li><strong>git diff</strong> affiche les différences entre le répertoire et l'index</li>
                 <li><strong>git diff --cached</strong> voir les diff. entre l'index et le dépot</li>
@@ -81,14 +85,14 @@
                 <li><strong>git diff ASH1 ASH2</strong> voir les diff. entre deux commits (ASH=>code commit)</li>
             </ul>
         </li>
-        <li><h3 class="h4">Rechercher un commit</h3>
+        <li class="list-group-item"><h3 class="h4">Rechercher un commit</h3>
             <ul>
                 <li><strong>git log -S "terme"</strong> permet de faire une recherche sur un terme</li>
                 <li><strong>git log -G "terme1|terme2"</strong> une recherche avec des expressions régulières</li>
                 <li><strong>git blame fichier</strong> renvoie un fichier avec l'auteur de chaque ligne</li>
             </ul>
         </li>
-        <li><h3 class="h4">Annuler des modifications du répertoire</h3>
+        <li class="list-group-item"><h3 class="h4">Annuler des modifications du répertoire</h3>
             <ul>
                 <li><strong>git reset --hard</strong> remet le répertoire de travail au même état que le dépot Git</li>
                 <li><strong>git reset</strong> supprime les modifs uniquement dans l'index</li>
@@ -96,13 +100,13 @@
                 <li><strong>git reset --soft</strong> supprime les modifs au niveau du dépot</li>
             </ul>
         </li>
-        <li><h3 class="h4">Modifier un commit</h3>
+        <li class="list-group-item"><h3 class="h4">Modifier un commit</h3>
             <ul>
                 <li><strong>On ne peut modifier que le dernier commit si on a pas "poussé" ses modifs sur un serveur distant</strong></li>
                 <li><strong>git commit -m "Message" --amend</strong> redéfinit le message du dernier commit</li>
             </ul>
         </li>
-        <li><h3 class="h4">Supprimer les fichiers non suivis</h3>
+        <li class="list-group-item"><h3 class="h4">Supprimer les fichiers non suivis</h3>
             <ul>
                 <li><strong>git clean -n</strong> pour voir seulement avant de supprimer</li>
                 <li><strong>git clean -dn</strong> pour voir seulement avec la suppression de sous-dossiers aussi</li>
@@ -110,35 +114,55 @@
                 <li><strong>git clean -xf</strong> supprime les fichiers listés dans .gitignore</li>
             </ul>
         </li>
-    </ol>
+    </ul>
 
     <h2 class="h3">Gérer les branches et les tags</h2>
-    <ol>
-        <li><h3 class="h4">Comprendre le système des branches</h3>
+    <ul class="list-group">
+        <li class="list-group-item"><h3 class="h4">Comprendre le système des branches</h3>
             <ul>
-                <li><strong>Les branches permettent de créer une version parallèle de notre développement</li>
+                <li><strong>Les branches permettent de créer une version parallèle</strong> de notre développement</li>
                 <li>Les branches permettent d'effectuer un série de modifications <strong>sans toucher au développement de la branche principale</strong></li>
                 <li><strong>On peut donc tester</strong> à certaines étapes du développement</li>
                 <li>Si les modifs d'une branche sont valables on peut <strong>fusionner</strong> sinon on peut abandonner</li>
                 <li>Une branche est en fait un <strong>pointeur dynamique</strong> (voir .git/refs/heads/nom-branche)</li>
             </ul>
         </li>
-        <li><h3 class="h4">Lister, créer et changer de branche</h3>
+        <li class="list-group-item"><h3 class="h4">Lister, créer et changer de branche</h3>
             <ul>
                 <li><strong>git branch</strong> affiche les branches et la courante en gras avec une étoile</li>
                 <li><strong>git branch nom-branche</strong> pour créer une nouvelle branche</li>
                 <li><strong>git checkout nom-branche</strong> pour se placer sur la branche</li>
+                <li><strong>git checkout -b nom-branche</strong> pour  créer et se placer sur la branche</li>
                 <li><strong>Une fois qu'on est sur sa branche on continue à travailler et à faire des commits</strong></li>
-                <li><strong>git log --graph --oneline</strong> pour afficher tout le détail des branches et des commits</li>
+                <li><strong>git log --all --decorate --oneline --graph </strong> pour afficher tout le détail des branches et des commits</li>
                 <li><strong>On peut aussi travailler sur la branche principale en même temps</strong></li>
             </ul>
         </li>
-        <li><h3 class="h4">Fusionner ses branches</h3>
+        <li class="list-group-item"><h3 class="h4">Fusionner ses branches</h3>
             <ul>
-                <li><strong> </strong> </li>
+                <li><strong>Se placer sur une branche vers laquelle on veut fusionner</strong> (généralement la principale)</li>
+                <li><strong>git checkout master</strong> donc</li>
+                <li><strong>git merge nom-branche</strong> on prend la branche et on la "mélange" avec celle sur laquelle on se situe</li>
             </ul>
         </li>
-    </ol>
-   
+        <li class="list-group-item"><h3 class="h4">Gérer les conflits</h3>
+            <ul>
+                <li>Lorsque deux commits modifient la même ligne de code sur deux branches différentes <strong>on aura un conflit au moment de fusionner</strong></li>
+                <li><strong>Le conflit déclenche donc un message d'erreur</strong> et la fusion est interrompue</li>
+                <li><strong>Il faut accéder au(x) fichier(s) mentionné(s) pour corriger le code</strong> les lignes concernées sont indiquées avec <br /> &lt;&lt;&lt;&lt;&lt;&lt; HEAD ======= &gt;&gt;&gt;&gt;&gt;&gt; conflict </li>
+                <li><strong>git add fichier-corrigé</strong> pour mettre à jour le dépôt normalement</li>
+                <li><strong>git commit</strong> ensuite tout seul pour reprendre la fusion et continuer</li>
+            </ul>
+        </li>
+        <li class="list-group-item"><h3 class="h4">Supprimer une branche</h3>
+            <ul>
+                <li><strong>On peut supprimer une branche dont le travail ne sera jamais intégré</strong></li>
+                <li><strong>On peut supprimer une branche qui a été fusionnée</strong> car elle existe toujours</li>
+                <li><strong>On ne peut pas supprimer la branche sur laquelle on est placé</strong></li>
+                <li><strong>git branch -d nom-branche</strong> pour supprimer la branche</li>
+            </ul>
+        </li>
+    </ul>
+ </div> 
 </body>
 </html>
