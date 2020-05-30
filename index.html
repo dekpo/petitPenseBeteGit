@@ -188,6 +188,55 @@
             </ul>
         </li>
     </ul>
+    <h2 class="h3">Partager et publier</h2>
+    <ul class="list-group">
+        <li class="list-group-item"><h3 class="h4">Créer un dépôt distant</h3>
+            <ul>
+                <li>Un dépôt distant permet de <strong>centraliser les différents dépôts locaux</strong> donc de permettre le travail en équipe</li>
+                <li><strong>git init --bare depotdisant</strong> permet d'initialiser un dépôt distant vide au tout début du travail</li>
+                <li><strong>git clone --bare local distant</strong> permet de créer un dépôt distant à partir d'un dépôt local existant (en le copiant)</li>
+            </ul>
+        </li>
+        <li class="list-group-item"><h3 class="h4">Cloner un dépôt distant</h3>
+            <ul>
+                <li><strong>git clone distant/ local</strong> copies tous les fichiers et les infos du distant vers le local en créant ce dernier</li>
+                <li><strong>Cloner un dépôt GitHub ou GitLab...</strong> est la méthode la plus courante</li>
+                <li><strong>git clone https://github.com/...</strong> télécharge donc tous les fichiers (il est conseillé de créer un dossier et de s'y placer avant)</li>
+            </ul>
+        </li>
+        <li class="list-group-item"><h3 class="h4">Envoyer avec push</h3>
+            <ul>
+                <li><strong>D'abord il faut "connecter" notre dépôt local au distant</strong> avec:</li>
+                <li><strong>git remote add origin https://github.com/...</strong> l'adresse du dépôt distant peut utiliser http ou ssh au autres</li>
+                <li><strong>git push origin master</strong> permet ensuite de "pousser" toutes ses modifs sur le dépôt distant sur la branche master</li>
+            </ul>
+        </li>
+        <li class="list-group-item"><h3 class="h4">Mettre à jour avec fetch et pull</h3>
+            <ul>
+                <li><strong>git branch --all</strong> affiche toutes les copies locales des branches distantes sur un dépôt local connecté avec un dépôt distant</li>
+                <li><strong>git fetch</strong> vérifie et affiche toutes les modifs distantes à faire dans le dépôt local (sans colies effectives)</li>
+                <li><strong>git pull origin master</strong> récupère toutes les modifs distantes à appliquer au dépôt local </li>
+                <li>Ces deux dernières manips sont à <strong>faire régulièrement lorsqu'on travaille en équipe</strong> pour mettre à jour son dépôt local par rapport au distant puisque les autres devs le modifient aussi</li>
+            </ul>
+        </li>
+        <li class="list-group-item"><h3 class="h4">Créer et supprimer une branche distante</h3>
+            <ul>
+                <li><strong>git branch newbranch</strong> création d'une nouvelle branche locale (rappel)</li>
+                <li><strong>git push origin newbranch</strong> copie la branche sur le dépôt distant</li>
+                <li><strong>git checkout master</strong> on se place sur la branche principale</li>
+                <li><strong>git push origin :newbranch</strong> puis avec :newbranch on supprime la branche distante</li>
+                <li><strong>git branch -d newbranche</strong> pour supprimer la branche locale (rappel)</li>
+            </ul>
+        </li>
+        <li class="list-group-item"><h3 class="h4">Outils et astuces</h3>
+            <ul>
+                <li><strong>gitk --all</strong> permet de lancer une interface graphique (uniquement affichage) implémentée dans Git</li>
+                <li>De nombreux outils GUI open-source sont disponibles à l'adresse https://git-scm.com/downloads/guis/</li>
+                <li><strong>git bisect</strong> permet d'investiguer sur des commits suspects</li>
+                <li><strong>git stash</strong> permet de sauvegarder ses modifs sans faire de commit</li>
+            </ul>
+        </li>
+    </ul>
  </div> 
 </body>
 </html>
